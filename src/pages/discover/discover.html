@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar no-border-bottom>
+    <ion-title>Discover</ion-title>
+  </ion-navbar>
+  
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="sortBy" (ionChange)="setMovies()">
+      <ion-segment-button value="popularity">
+        Popular
+      </ion-segment-button>
+      <ion-segment-button value="vote">
+        Top rated
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-item *ngFor="let movie of movies" detail-push (click)="openDetail(movie.id)">
+      <img class="thumb" [src]="movie.imageUrl()" item-left/>
+      <h3>{{movie.name}}</h3>
+      <ion-badge>{{movie.voteAverage | number:'1.1-1'}}</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

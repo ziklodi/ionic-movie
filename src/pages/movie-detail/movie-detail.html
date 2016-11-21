@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Movie</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center>
+    <img [src]="movie.imageUrl('large')">
+    <h3>{{movie.name}}</h3>
+    <p>{{movie.overview}}</p>
+  </div>
+</ion-content>
